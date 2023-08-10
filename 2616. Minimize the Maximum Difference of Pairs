@@ -1,0 +1,28 @@
+https://leetcode.com/problems/minimize-the-maximum-difference-of-pairs/
+
+Wrong Answer
+1132 / 1582 testcases passed
+
+class Solution {
+    public int minimizeMax(int[] nums, int p) {
+        //non-efficient solution: run through n^2logn times
+        
+        /* hold current number
+        */
+
+        Map<Integer, Integer> lowestPairs = new HashMap<>();
+
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i+1; j < nums.length; j++) {
+
+                int difference = Math.abs(nums[i] - nums[j]);
+                if (!lowestPairs.containsKey(i) || lowestPairs.get(i) > difference) {
+                    lowestPairs.put(i, difference);
+                }
+            }
+        }
+        List<Integer> result4 = lowestPairs.values().stream().sorted().collect(Collectors.toList());
+        
+        return p > 0 ? result4.get(p-1) : 0;
+    }
+}
