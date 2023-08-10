@@ -13,6 +13,7 @@ class Solution {
             }
         }
 
+        System.out.println("Got to row with info " + Arrays.toString(matrix[row]));
         for (int i = 0; i < matrix[0].length; i++) {
             if (target == matrix[row][i])
                 return true;
