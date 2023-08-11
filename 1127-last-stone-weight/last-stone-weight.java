@@ -1,5 +1,5 @@
 class Solution {
-    public int lastStoneWeight(int[] stones) {
+    public int lastStoneWeight(int[] stones) { //this feels disgusting
         List<Integer> unmodifiableList = Arrays.stream(stones).boxed().toList();
         List<Integer> l = new ArrayList<Integer>(unmodifiableList);
         int x, y;
