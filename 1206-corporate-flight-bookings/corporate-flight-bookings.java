@@ -1,4 +1,6 @@
 class Solution {
+
+    //first solution, runs. Looking at others for runtime efficiency
     public int[] corpFlightBookings(int[][] bookings, int n) {
         int[] totalSeats = new int[n];
         for (int[] row : bookings) {
