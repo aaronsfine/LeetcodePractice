@@ -1,4 +1,4 @@
-class MinStack {
+/**class MinStack {
 
     //can I just use the Stack class?
     Stack<Integer> s;
@@ -28,6 +28,55 @@ class MinStack {
 
         return min;
     }
+}
+
+*/
+
+class MinStack {
+
+    private class Node {
+
+        int val;
+        Node next;
+
+        public Node(int val, Node next) {
+            this.val = val;
+            this.next = next;
+        }
+    }
+
+    private Node head;
+
+    public MinStack() {}
+
+    public void push(int val) {
+        if (head == null) {
+            head = new Node(val, null);
+        } else {
+            head = new Node(val, head);
+        }
+    }
+
+    public void pop() {
+        head = head.next;
+    }
+
+    public int top() {
+        return head.val;
+    }
+
+    public int getMin() {
+        int min = head.val;
+        Node n = head.next;
+         while (n != null) {
+            if (n.val < min)
+                min = n.val;
+            n = n.next;
+        }
+
+        return min;
+    }
+
 }
 
 /**
