@@ -1,11 +1,12 @@
 class Solution {
     public int mySqrt(int x) {
         //used hint
-        int curr = 0;
-        while ((double)(curr + 1)*(curr + 1) <= (double)x) {
+        double curr = 0;
+        double x1 = (double)x;
+        while ((curr + 1)*(curr + 1) <= x1) {
             curr++;
         }
 
-        return curr;
+        return (int)curr;
     }
 }
